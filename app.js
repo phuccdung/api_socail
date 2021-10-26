@@ -22,5 +22,5 @@ app.get("/posts", (req, res) => {
 mongoose.connect(process.env.MONGO_URL,()=> 
 console.log("connected MonGoDB")
 );
-
-app.listen(5000);
+app.listen(process.env.PORT || 5000);
+app.listen(PORT);
