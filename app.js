@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 require('dotenv/config');
-
+const PORT = process.env.PORT || 8800;
 app.use(bodyParser.json());
 
 const postsRoute= require("./routes/posts");
@@ -22,5 +22,4 @@ app.get("/posts", (req, res) => {
 mongoose.connect(process.env.MONGO_URL,()=> 
 console.log("connected MonGoDB")
 );
-app.listen(process.env.PORT || 5000);
 app.listen(PORT);
