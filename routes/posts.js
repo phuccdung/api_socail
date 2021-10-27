@@ -40,6 +40,15 @@ router.get("/:postId", async(req, res) => {
     }
 });
 
+router.delete("/:postId", async(req, res) => {
+    try{
+        const removePost =await Post.remove({_id: req.params.postId});
+        res.json(removePost);
+    }
+    catch(err){
+        res.json({message: err});
+    }
+});
 
 
 router.patch("/:postId", async(req, res) => {
